@@ -110,7 +110,9 @@ for i in range(3):
 maximum, maxindices, minimum, minindices = min_max_euclid(data)
 
 print(f"Minimum : {minimum}")
+print(f"Minimum distance is between ({data[minindices[0]][0]},{data[minindices[1]][0]}) and ({data[minindices[0]][1]},{data[minindices[1]][1]})")
 print(f"Maximum : {maximum}")
+print(f"Maximum distance is between ({data[maxindices[0]][0]},{data[maxindices[1]][0]}) and ({data[maxindices[0]][1]},{data[maxindices[1]][1]})")
 
 fig,ax = plt.subplots(figsize=(8,6))
 
@@ -130,7 +132,7 @@ ax.scatter(*data[minindices[1]], s=10, color='black')
 ax.scatter(*data[maxindices[0]], s=10, color='black')
 ax.scatter(*data[maxindices[1]], s=10, color='black')
 
-ax.plot([data[minindices[0]][0], data[minindices[1]][0]], [data[minindices[0]][1], data[minindices[1]][1]], c='black', linestyle="solid", label="Maximum: {:.3f}".format(minimum))
+ax.plot([data[minindices[0]][0], data[minindices[1]][0]], [data[minindices[0]][1], data[minindices[1]][1]], c='black', linestyle="solid", label="Minimum: {:.3f}".format(minimum))
 ax.plot([data[maxindices[0]][0], data[maxindices[1]][0]], [data[maxindices[0]][1], data[maxindices[1]][1]], c='black', linestyle="dashed", label="Maximum: {:.3f}".format(maximum))
 
 ax.legend()
